@@ -1,0 +1,14 @@
+SERTIFIKAT
+Sekarang belum ada sertifikat, jadi bagian "Certifications" disembunyikan di situs.
+
+Cara menampilkannya:
+  1. Buka src/data/portfolio.ts, cari "export const certifications".
+  2. Tambah satu baris per sertifikat, contoh:
+       { issuer: 'Coursera', name: 'Google Data Analytics Certificate', year: '2024' },
+  3. Taruh gambarnya di folder ini, nama file = nomor urut baris tadi:
+       1.jpg  (sertifikat pertama), 2.jpg (kedua), 3.jpg, dst.
+     Landscape, lebar minimal 1600 px (JPG/PNG/WebP).
+Sertifikat tanpa gambar tetap tampil sebagai kartu teks.
+
+File ini hanya catatan, boleh dihapus. Yang dibaca situs hanya file gambar (.jpg .jpeg .png .webp .avif).
+Tips: ukuran file sebaiknya di bawah 500 KB per gambar (kompres di squoosh.app bila perlu).

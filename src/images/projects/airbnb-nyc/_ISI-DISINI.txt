@@ -1,0 +1,18 @@
+PROYEK: Airbnb NYC Analytics
+Kode folder: airbnb-nyc  (jangan diganti namanya)
+Status kartu sekarang: sudah ada gambar bawaan (akan DIGANTI kalau Anda menaruh card.jpg)
+Screenshot sekarang: 3
+
+Taruh file dengan nama PERSIS seperti ini:
+
+  card.jpg          Gambar kartu proyek. Landscape 4:3, minimal 1200 x 900 px.
+  card-light.jpg    (opsional) versi untuk tema terang. Kalau tidak ada, card.jpg dipakai di kedua tema.
+  shot-1.jpg        Screenshot dashboard/hasil, lebar minimal 1600 px.
+  shot-2.jpg        (opsional) dan seterusnya: shot-3.jpg, shot-4.jpg ...
+
+Ekstensi boleh .jpg .jpeg .png .webp. Kalau folder ini kosong, tampilan bawaan dipakai.
+Catatan: begitu ada shot-1.jpg di sini, SEMUA screenshot bawaan diganti oleh yang ada di folder ini.
+Keterangan (caption) screenshot diisi di src/data/links.ts pada bagian "captions".
+
+File ini hanya catatan, boleh dihapus. Yang dibaca situs hanya file gambar (.jpg .jpeg .png .webp .avif).
+Tips: ukuran file sebaiknya di bawah 500 KB per gambar (kompres di squoosh.app bila perlu).

@@ -1,0 +1,16 @@
+FOTO JOURNEY: Data Analyst (CV. DB Klik), Jan 2025 – Oct 2026
+Kode folder: db-klik  (jangan diganti namanya)
+
+  1.jpg   -> slot 1: "Team photo"
+  2.jpg   -> slot 2: "Daily work at the office"
+  3.jpg   -> slot 3: "Team meeting"
+  4.jpg   -> slot 4: "Mentoring the interns"
+  5.jpg   -> slot 5: "Company moments"
+
+Aturan:
+  - Landscape 4:3 (contoh 1600 x 1200 px). Foto yang bukan 4:3 dipotong bagian tengahnya.
+  - Slot yang tidak diisi tidak ditampilkan. Kalau satu bab tidak punya foto sama sekali, bagian fotonya disembunyikan.
+  - Keterangan di bawah foto diubah di src/data/portfolio.ts (cari "id: 'db-klik'", bagian "docs", ubah "caption").
+
+File ini hanya catatan, boleh dihapus. Yang dibaca situs hanya file gambar (.jpg .jpeg .png .webp .avif).
+Tips: ukuran file sebaiknya di bawah 500 KB per gambar (kompres di squoosh.app bila perlu).

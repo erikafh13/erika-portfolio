@@ -1,0 +1,15 @@
+FOTO JOURNEY: Data Analyst (Telkomsel Branch Surabaya), Sept 2024 – Dec 2024
+Kode folder: telkomsel  (jangan diganti namanya)
+
+  1.jpg   -> slot 1: "Team photo"
+  2.jpg   -> slot 2: "Daily work at the office"
+  3.jpg   -> slot 3: "Team meeting"
+  4.jpg   -> slot 4: "Internship moments"
+
+Aturan:
+  - Landscape 4:3 (contoh 1600 x 1200 px). Foto yang bukan 4:3 dipotong bagian tengahnya.
+  - Slot yang tidak diisi tidak ditampilkan. Kalau satu bab tidak punya foto sama sekali, bagian fotonya disembunyikan.
+  - Keterangan di bawah foto diubah di src/data/portfolio.ts (cari "id: 'telkomsel'", bagian "docs", ubah "caption").
+
+File ini hanya catatan, boleh dihapus. Yang dibaca situs hanya file gambar (.jpg .jpeg .png .webp .avif).
+Tips: ukuran file sebaiknya di bawah 500 KB per gambar (kompres di squoosh.app bila perlu).

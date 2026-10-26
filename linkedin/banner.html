@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:1584px;height:396px;overflow:hidden;font-family:Inter,sans-serif;color:#16161b;
+ background:linear-gradient(100deg,#fff6f8 0%,#fcebee 45%,#f6d8de 100%);position:relative}
+.glow{position:absolute;border-radius:50%;filter:blur(30px)}
+.g1{right:-120px;top:-170px;width:760px;height:700px;background:radial-gradient(closest-side,rgba(229,19,43,.30),rgba(229,19,43,.07) 60%,transparent)}
+.g2{left:-160px;bottom:-260px;width:620px;height:520px;background:radial-gradient(closest-side,rgba(255,150,170,.35),transparent)}
+.ring{position:absolute;right:60px;top:26px;width:344px;height:344px;border-radius:50%;border:1.5px solid rgba(229,19,43,.28);box-shadow:0 0 90px rgba(229,19,43,.18),inset 0 0 60px rgba(229,19,43,.10)}
+.ring2{right:15px;top:-20px;width:434px;height:434px;border-color:rgba(229,19,43,.12);box-shadow:none}
+.streak{position:absolute;height:2px;background:linear-gradient(90deg,transparent,rgba(229,19,43,.55),transparent)}
+.txt{position:absolute;right:542px;top:0;align-items:center;text-align:center;height:396px;display:flex;flex-direction:column;justify-content:center;padding-bottom:6px}
+h1{font-family:'Bebas Neue';font-weight:400;font-size:190px;line-height:.82;letter-spacing:.02em;color:#16161b}
+.tag{margin-top:6px;font-weight:700;font-size:30px;letter-spacing:.42em;margin-right:-.42em;color:#e5132b}
+.meta{justify-content:center;margin-top:22px;font-size:23px;font-weight:500;color:#50505a;display:flex;gap:12px;align-items:center}
+.meta i{width:4px;height:4px;border-radius:50%;background:#767680}
+.role{margin-top:14px;font-size:16px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#16161b}
+.pills{position:absolute;left:60px;top:70px;display:grid;grid-template-columns:repeat(2,auto);gap:14px;justify-content:start}
+.pills span{background:rgba(255,255,255,.8);border:1px solid rgba(229,19,43,.2);border-radius:999px;padding:14px 30px;font-weight:700;font-size:20px;letter-spacing:.14em;color:#e5132b;text-align:center}
+.spark{position:absolute;left:0;top:0}
+.tools{margin-top:18px;display:flex;gap:8px;justify-content:center}.tools span{border:1.5px solid rgba(229,19,43,.35);border-radius:999px;padding:6px 14px;font-weight:700;font-size:12px;letter-spacing:.12em;color:#e5132b;background:rgba(255,255,255,.6)}
+.quote{position:absolute;left:70px;top:70px;width:560px}
+.quote small{display:flex;align-items:center;gap:14px;font-weight:700;font-size:12px;letter-spacing:.4em;color:#e5132b}
+.quote small:after{content:"";width:90px;height:2px;background:linear-gradient(90deg,#e5132b,transparent)}
+.quote p{margin-top:16px;font-family:'Instrument Serif',serif;font-style:italic;font-size:50px;line-height:1.08;color:#16161b}
+.quote p em{color:#e5132b}
+.chip{position:absolute;background:rgba(255,255,255,.82);border:1px solid rgba(229,19,43,.18);border-radius:14px;padding:13px 20px;box-shadow:0 10px 30px rgba(229,19,43,.12)}
+.chip b{display:block;font-size:22px;font-weight:700;white-space:nowrap}
+.chip span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#50505a;white-space:nowrap;margin-top:2px}
+</style></head><body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div class="ring ring2"></div><div class="ring"></div>
+
+<span class="streak" style="left:760px;top:372px;width:420px;opacity:.6"></span>
+<svg class="spark" width="1584" height="396" style="top:55px"><g transform="translate(600 0) scale(-1 1)"><polyline fill="none" stroke="rgba(229,19,43,.26)" stroke-width="2.5" points="0,330 70,300 130,312 200,250 270,270 340,200 400,215"/><g fill="rgba(229,19,43,.13)"><rect x="40" y="320" width="26" height="76" rx="5"/><rect x="82" y="290" width="26" height="106" rx="5"/><rect x="124" y="305" width="26" height="91" rx="5"/><rect x="166" y="250" width="26" height="146" rx="5"/><rect x="208" y="275" width="26" height="121" rx="5"/><rect x="250" y="225" width="26" height="171" rx="5"/></g></g></svg>
+<div class="quote" style="top:58px;width:640px"><small>WHAT I DO</small><p style="font-size:60px;line-height:1;margin-top:12px;white-space:nowrap">Data into <em>decisions.</em></p></div>
+<div class="txt">
+ <h1>ERIKA</h1>
+ <div class="tag">DATA ANALYST</div>
+ <div class="meta"><span>13 Projects</span><i></i><span>4 Work Experiences</span></div>
+<div class="tools"><span>SQL</span><span>PYTHON</span><span>POWER BI</span><span>EXCEL</span></div>
+</div>
+<div class="chip" style="left:1130px;top:42px"><b>10+ Dashboards</b><span>Power BI · Tableau · Looker Studio</span></div>
+<div class="chip" style="left:1222px;top:152px"><b>5 ML Projects</b><span>Forecasting · Clustering · Scraping</span></div>
+<div class="chip" style="left:1110px;top:262px"><b>50+ Excel</b><span>Analyses delivered</span></div>
+</body></html>

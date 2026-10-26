@@ -1,0 +1,235 @@
+@import 'tailwindcss';
+
+/* `light:` utility variant, active on the light theme */
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
+
+@theme {
+  --color-ink: #07070a;
+  --color-ink-2: #0e0e13;
+  --color-ink-3: #16161d;
+  --color-crimson: #e5132b;
+  --color-crimson-2: #ff3d5a;
+  --color-bone: #f4f1ec;
+  --color-mist: #a7a6ad;
+  --color-smoke: #6d6c75;
+  --font-display: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --ease-cine: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: dark;
+  --gutter: clamp(16px, 4vw, 56px);
+}
+
+/* Light theme: the same tokens, remapped. Dark stays the default. */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-ink: #fcebee;
+  --color-ink-2: #ffffff;
+  --color-ink-3: #f6d8de;
+  --color-bone: #16161b;
+  --color-mist: #50505a;
+  --color-smoke: #767680;
+}
+
+/* Surfaces that stay dark in either theme (posters, overlays, the CV card) */
+.keep-dark {
+  color-scheme: dark;
+  --color-ink: #07070a;
+  --color-ink-2: #0e0e13;
+  --color-ink-3: #16161d;
+  --color-bone: #f4f1ec;
+  --color-mist: #a7a6ad;
+  --color-smoke: #6d6c75;
+  color: var(--color-bone);
+}
+
+/* White hairlines and washes become dark ones on the light theme */
+:root[data-theme='light'] :is([class*=' border-white'], [class^='border-white']):not(.keep-dark, .keep-dark *) {
+  border-color: rgba(0, 0, 0, 0.14);
+}
+:root[data-theme='light'] :is([class*=' bg-white/'], [class^='bg-white/']):not(.keep-dark, .keep-dark *) {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+:root[data-theme='light'] :is([class*=' ring-white'], [class^='ring-white']):not(.keep-dark, .keep-dark *) {
+  --tw-ring-color: rgba(0, 0, 0, 0.14);
+}
+:root[data-theme='light'] .glass:not(.keep-dark *) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65));
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 26px -10px rgba(190, 80, 110, 0.4);
+}
+/* the animated name gradient turns muddy on a light page: use the plain dark ink */
+:root[data-theme='light'] .shimmer-text {
+  background: none;
+  -webkit-text-fill-color: var(--color-bone);
+  color: var(--color-bone);
+  animation: none;
+}
+
+/* Light versions of the poster-style surfaces (cards, covers, the portrait card, the CV sheet) */
+:root[data-theme='light'] .poster:not(.keep-dark *) {
+  background:
+    radial-gradient(120% 90% at 85% 10%, color-mix(in srgb, var(--pv) 42%, #fff) 0%, transparent 60%),
+    radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--pf) 32%, #fff) 0%, transparent 70%),
+    linear-gradient(160deg, color-mix(in srgb, var(--pa) 24%, #fff) 0%, color-mix(in srgb, var(--pt) 14%, #fff) 100%) !important;
+}
+:root[data-theme='light'] .poster-fade:not(.keep-dark *) {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.9) 28%, rgba(255, 255, 255, 0.35) 58%, transparent) !important;
+}
+:root[data-theme='light'] .card-shade:not(.keep-dark *) {
+  background-image: radial-gradient(95% 90% at 0% 100%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 40%, transparent 80%) !important;
+}
+:root[data-theme='light'] .about-bg:not(.keep-dark *) {
+  background-image: radial-gradient(80% 60% at 50% 30%, #e993a5, #dba5b2 60%, #cf94a4) !important;
+}
+:root[data-theme='light'] .resume-sheet:not(.keep-dark *) {
+  background: #ffffff !important;
+  --tw-ring-color: rgba(0, 0, 0, 0.12);
+}
+
+:root[data-theme='light'] .tab-active {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  --tw-ring-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px -10px rgba(190, 80, 110, 0.4);
+}
+
+html {
+  position: relative;
+  background: var(--color-ink);
+  -webkit-text-size-adjust: 100%;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: white;
+}
+/* a selected image would otherwise get washed in the selection colour */
+img::selection {
+  background: transparent;
+}
+
+.gutter {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* Film grain - a single fixed layer, cheap and subtle */
+.grain {
+  position: fixed;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Hide scrollbars on horizontal rails while keeping them scrollable */
+.rail {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom cursor: hide the native one only when ours is active */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button,
+.has-custom-cursor [role='button'] {
+  cursor: none;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(244, 241, 236, 0.28);
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-crimson-2);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.light-streak {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 90, 110, 0.9), transparent);
+  filter: blur(0.4px);
+  animation: streak 7s var(--ease-cine) infinite;
+  opacity: 0;
+}
+@keyframes streak {
+  0% { transform: translateX(-40%) scaleX(0.4); opacity: 0; }
+  15% { opacity: 0.9; }
+  45% { transform: translateX(40%) scaleX(1); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, var(--color-bone) 0%, var(--color-bone) 40%, #ff8a9a 50%, var(--color-bone) 60%, var(--color-bone) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  .light-streak,
+  .shimmer-text {
+    animation: none !important;
+  }
+  .light-streak {
+    display: none;
+  }
+}
